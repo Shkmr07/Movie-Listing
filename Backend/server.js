@@ -8,7 +8,10 @@ const app = express();
 
 const port = process.env.PORT;
 
-app.use(cors())
+app.use(cors({
+  origin : "*",
+  methods : ["GET","POST","PATCH","PUT","DELETE"]
+}))
 
 app.get("/", (req, res) => {
   res.send("Welcome to Movie Listing app");
